@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="https://fonts.cdnfonts.com/css/cursed-timer-ulil" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basketball-ScoreBoard</title>
+    <Style>
+        *{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+            border: 1px solid red ;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: whitesmoke;
+        }
+        .score-container{
+            border: 1px solid green;
+            background-color: rgb(42, 42, 112);
+            padding: 40px;
+            display: flex;
+            gap: 20px;
+        }
+        .score-container h1{
+            color: white;                                               
+        }
+        .score-box{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 0;
+            margin: 30px 0;
+            background-color: black;
+            border-radius: 2px;
+        }
+        .score-box p{
+            font-size: 50px;
+            color: white;
+            font-family: 'Cursed Timer ULiL', sans-serif;
+            color: rgb(255, 50, 50);
+        }
+        .score-btns{
+            display: flex ;
+            justify-content: space-around;
+        }
+        .score-btns button{
+            font-family: 'Cursed Timer ULiL', sans-serif;
+            border: 1px solid white;
+            background-color: rgb(42, 42, 112) ;
+            color: white;
+            font-size: 15px;
+            padding: 5px;
+            border-radius: 4px;
+        }
+
+    </Style>
+</head>
+<body>
+    <div class="score-container">
+        <div class="home">
+            <h1>HOME</h1>
+            <div class="score-box">
+                <p id="home-score">0</p>
+            </div>
+            <div class="score-btns">
+                <button onclick="homePlus(1)">+1</button>
+                <button onclick="homePlus(2)">+2</button>
+                <button onclick="homePlus(3)">+3</button>
+            </div>
+        </div>
+        <div class="guest">
+            <h1>GUEST</h1>
+            <div class="score-box">
+                <p id="guest-score">0</p>
+            </div>
+            <div class="score-btns">
+                <button onclick="guestPlus(1)">+1</button>
+                <button onclick="guestPlus(2)">+2</button>
+                <button onclick="guestPlus(3)">+3</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        let homeCount = 0
+        let guestCount = 0
+        let homeScore = document.getElementById("home-score")
+        let guestScore = document.getElementById("guest-score")
+
+        function homePlus(num){
+            homeCount = homeCount + num
+            homeScore.textContent = homeCount
+        }
+        function guestPlus(num){
+            guestCount = guestCount + num
+            guestScore.textContent = guestCount
+        }
+
+    </script>
+</body>
+</html>
